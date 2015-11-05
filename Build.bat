@@ -1,11 +1,11 @@
 echo off
-title Run Build to Project .NET
+title Run Build to Project DOTNET
 cls
 
 
 @rem Define project name
 set PROJECTMAINPATH=CIUniversalWindows.sln
-set PROJECTTESTPATH=CIUniversalWindows\Tests\bin\x64\Release\Tests.dll
+set PROJECTTESTPATH=Tests\bin\x64\Release\Tests.dll
 
 echo Start Build!
 
@@ -31,11 +31,17 @@ set NUNITPATH=C:\Program Files (x86)\NUnit 2.6.4\bin
 @if exist "%NUNITPATH%" set PATH=%NUNITPATH%;%PATH%
 
 @rem ------------------- { SHOW ENVIRONMENT VARIABLE} ------------------
-echo Show environment variables 
+echo [!] Show environment variables 
+echo.
 echo MSBUILD - [%MSBUILDPATH%]
+echo.
 echo NUGET - [%NUGETPATH%]
+echo.
 echo NUNIT - [%NUNITPATH%]
+echo.
 echo PATH - [%PATH%]
+echo.
+echo.
 @rem --------------------------------------------------------------------
 
 
@@ -44,18 +50,24 @@ echo PATH - [%PATH%]
 echo Executing Nuget with command [nuget restore %PROJECTMAINPATH%] ...
 nuget restore %PROJECTMAINPATH%
 echo Nuget done.
+echo.
+echo.
 
 @rem ---------------------------- {RUN MSBUILD} ---------------------------
 @rem Execute msbuild
 echo Executing MSBuild with command [msbuild %PROJECTMAINPATH% /m /t:Clean;Rebuild /p:Configuration=Release;Platform=x64] ...
 msbuild %PROJECTMAINPATH% /m /t:Clean;Rebuild /p:Configuration=Release;Platform=x64
 echo MSBuild done.
+echo.
+echo.
 
 @rem ---------------------------- {RUN NUNIT} -----------------------------
 @rem Execute nunit-console
 echo Executing NUnit with command [nunit-console %PROJECTMAINPATH%]
 nunit-console %PROJECTTESTPATH%
 echo Nunit done.
+echo.
+echo.
 
 echo Build done.
 
