@@ -54,8 +54,8 @@ echo.
 echo.
 
 echo Workspace - [%WORKSPACE%]
-git clone -q --branch=dev https://github.com/NuGet/NuGetGallery.git %WORKSPACE%
-build.cmd
+git clone -q --branch=dev https://github.com/NuGet/NuGetGallery.git
+msbuild build.msbuild
 
 @rem ---------------------------- {RUN MSBUILD} ---------------------------
 @rem Execute msbuild
