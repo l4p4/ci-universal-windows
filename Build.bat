@@ -48,7 +48,7 @@ echo.
 @rem ---------------------------- {RUN NUGET} ----------------------------
 @rem Execute nuget
 echo Executing Nuget with command [nuget restore %PROJECTMAINPATH%] ...
-@rem nuget restore %PROJECTMAINPATH%
+nuget restore %PROJECTMAINPATH%
 echo Nuget done.
 echo.
 echo.
