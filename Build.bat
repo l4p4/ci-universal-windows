@@ -49,7 +49,7 @@ echo.
 @rem Execute nuget
 echo Executing Nuget with command [nuget restore %PROJECTMAINPATH%] ...
 @rem nuget restore %PROJECTMAINPATH% 
-restore -Source "https://www.nuget.org/api/v2;https://www.myget.org/F/nugetbuild/" "" -NonInteractive
+nuget restore -Source "https://www.nuget.org/api/v2;https://www.myget.org/F/nugetbuild/" "" -NonInteractive
 echo Nuget done.
 echo.
 echo.
