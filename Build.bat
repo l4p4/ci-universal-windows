@@ -55,8 +55,8 @@ echo.
 
 @rem ---------------------------- {RUN MSBUILD} ---------------------------
 @rem Execute msbuild
-echo Executing MSBuild with command [msbuild %PROJECTMAINPATH% /m /t:Clean;Rebuild /p:Configuration=Release;Platform=x64] ...
-msbuild %PROJECTMAINPATH% /m /t:Clean;Rebuild /p:Configuration=Release;Platform=x64
+echo Executing MSBuild with command [msbuild %PROJECTMAINPATH% /m /t:Clean;Build /p:Configuration=Release;Platform=x64] ...
+msbuild %PROJECTMAINPATH% /m /t:Clean;Build /p:Configuration=Release;Platform=x64
 echo MSBuild done.
 echo.
 echo.
