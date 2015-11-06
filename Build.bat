@@ -12,7 +12,7 @@ echo Start Build!
 @rem ---------------------- {DEFINE PATH TO MSBUILD} ----------------------
 @rem Add path to MSBuild Binaries
 @rem Example C:\Program Files (x86)\MSBuild\14.0\Bin
-@rem download the msbuild and install [https://www.microsoft.com/en-us/download/details.aspx?id=49512&WT.mc_id=rss_alldownloads_devresources]
+@rem download the msbuild and install [en_visual_studio_enterprise_2015_x86_x64_dvd_6850497; select all features]
 set MSBUILDPATH=C:\Program Files (x86)\MSBuild\14.0\Bin
 @if exist "%MSBUILDPATH%" set PATH=%MSBUILDPATH%;%PATH%
 
