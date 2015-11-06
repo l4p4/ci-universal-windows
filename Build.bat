@@ -20,8 +20,8 @@ set MSBUILDPATH=C:\Program Files (x86)\MSBuild\14.0\Bin
 @rem Add path to Nuget Binaries
 @rem Example C:\Program Files\Nuget
 @rem download the nuget to the folder above or anywhere and set bellow [https://docs.nuget.org/consume/installing-nuget]
-@rem set NUGETPATH=C:\Program Files\Nuget
-@rem @if exist "%NUGETPATH%" set PATH=%NUGETPATH%;%PATH%
+set NUGETPATH=C:\Program Files\Nuget
+@if exist "%NUGETPATH%" set PATH=%NUGETPATH%;%PATH%
 
 @rem ---------------------- {DEFINE PATH TO NUNIT} ----------------------
 @rem Add path to NUnit Binaries
@@ -48,14 +48,11 @@ echo.
 @rem ---------------------------- {RUN NUGET} ----------------------------
 @rem Execute nuget
 echo Executing Nuget with command [nuget restore %PROJECTMAINPATH%] ...
-@rem nuget restore %PROJECTMAINPATH%
+@rem nuget restore %PROJECTMAINPATH% 
+restore -Source "https://www.nuget.org/api/v2;https://www.myget.org/F/nugetbuild/" "" -NonInteractive
 echo Nuget done.
 echo.
 echo.
-
-echo Workspace - [%WORKSPACE%]
-git clone -q --branch=dev https://github.com/NuGet/NuGetGallery.git
-msbuild build.msbuild
 
 @rem ---------------------------- {RUN MSBUILD} ---------------------------
 @rem Execute msbuild
