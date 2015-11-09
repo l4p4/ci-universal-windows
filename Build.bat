@@ -47,16 +47,16 @@ echo.
 
 @rem ---------------------------- {RUN NUGET} ----------------------------
 @rem Execute nuget
-echo Executing Nuget with command [nuget restore %PROJECTMAINPATH%] ...
-nuget restore %PROJECTMAINPATH% 
-echo Nuget done.
+@rem echo Executing Nuget with command [nuget restore %PROJECTMAINPATH%] ...
+@rem nuget restore %PROJECTMAINPATH% 
+@rem echo Nuget done.
 echo.
 echo.
 
 @rem ---------------------------- {RUN MSBUILD} ---------------------------
 @rem Execute msbuild
-echo Executing MSBuild with command [msbuild %PROJECTMAINPATH% /m /t:Clean;Rebuild /p:Configuration=Release;Platform=x64] ...
-msbuild %PROJECTMAINPATH% /m /t:Clean;Rebuild /p:Configuration=Release;Platform=x64
+echo Executing MSBuild with command [msbuild %PROJECTMAINPATH% /m /t:Rebuild /p:Configuration=Release;Platform=x64] ...
+msbuild %PROJECTMAINPATH% /m /t:Rebuild /p:Configuration=Release;Platform=x64
 echo MSBuild done.
 echo.
 echo.
